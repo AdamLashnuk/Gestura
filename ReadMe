@@ -1,1 +1,99 @@
 
+# Gestura
+
+Gestura is a real-time American Sign Language (ASL) learning and text-input application built using computer vision and machine learning. It uses a standard webcam to recognize ASL hand gestures and provides interactive learning and free-writing modes.
+
+## Features
+
+### Education Mode
+- Prompts the user with a target ASL letter
+- Requires the sign to be held for a short duration to confirm
+- Provides immediate feedback (Correct / Incorrect)
+- Tracks score to support practice-based learning
+
+### Free Write Mode
+- Allows users to input letters using ASL hand gestures
+- Letters are accepted only after being held consistently for ~2 seconds
+- Buffered letters are displayed live
+- Press **Space** to commit buffered letters into text
+- Press **Delete (⌫)** to remove the last buffered letter
+- Designed to reduce false positives and jitter
+
+## How It Works
+
+- MediaPipe Hands extracts 21 hand landmarks from the webcam feed
+- Landmarks are normalized relative to the wrist
+- A K-Nearest Neighbors (KNN) classifier is trained on custom-labeled ASL gesture data
+- Predictions are made in real time and stabilized using frame-based confirmation
+
+## Requirements
+
+- Python 3.10, (later versions dont work properly with media pipe)
+- Webcam
+
+
+
+
+
+## Guide: Training and Using Gestura
+
+### Step 1: Collect Training Data
+Run the data collection script to record ASL hand gestures.
+
+- Open the data collection mode (`train.py`)
+- Select the letter you want to train
+- Hold the corresponding ASL hand gesture steadily in view of the camera
+- Captured landmark data will be saved to `asl_letters.csv`
+
+Repeat this process for each letter you want the model to recognize.
+
+---
+
+### Step 2: Train the Model
+Once data collection is complete:
+
+- Run `train_model.py`
+- This script trains a machine learning classifier on your collected data
+- A trained model file (`model.pkl`) will be generated
+
+This model is specific to the data you collected.
+
+---
+
+### Step 3: Run the Application
+After training:
+
+- Open the main application (`main.py`)
+- Gestura will load the trained model automatically
+- The application will now recognize ASL letters based on your custom training data
+
+---
+
+### Notes
+- Model accuracy depends heavily on the quality and consistency of the training data
+- A demo CSV file with pre-collected data may be included in a future release
+
+---
+
+## Hackathon Submission
+
+This project is a submission for **TartanHacks 2026**.
+
+---
+
+## License
+
+MIT License
+
+Copyright (c) 2026 Adam Lashnuk
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
