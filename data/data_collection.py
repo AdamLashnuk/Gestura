@@ -14,7 +14,7 @@ hands = mp_hands.Hands(
 
 cap = cv2.VideoCapture(0)
 
-DATA_PATH = "data/asl_letters.csv"
+DATA_PATH = "asl_letters.csv"
 
 TARGET_SAMPLES = 80
 labels = ["A", "B", "C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]

@@ -179,11 +179,11 @@ while True:
                     cv2.FONT_HERSHEY_SIMPLEX, 0.8, (180, 180, 180), 2)
 
     # -------- FPS --------
-    cTime = time.time()
-    fps = 1 / (cTime - pTime) if pTime else 0
-    pTime = cTime
-    cv2.putText(frame, f"FPS: {int(fps)}", (10, 30),
-                cv2.FONT_HERSHEY_PLAIN, 2, (0, 255, 0), 2)
+#    cTime = time.time()
+ #   fps = 1 / (cTime - pTime) if pTime else 0
+ #   pTime = cTime
+  #  cv2.putText(frame, f"FPS: {int(fps)}", (10, 30),
+  #              cv2.FONT_HERSHEY_PLAIN, 2, (0, 255, 0), 2)
 
     cv2.imshow("ASL Translation", frame)
     if key == 27:
