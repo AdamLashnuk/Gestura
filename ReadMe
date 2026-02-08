@@ -3,6 +3,10 @@
 
 Gestura is a real-time American Sign Language (ASL) learning and text-input application built using computer vision and machine learning. It uses a standard webcam to recognize ASL hand gestures and provides interactive learning and free-writing modes.
 
+
+##WORKING DEMO VIDEO
+https://www.youtube.com/watch?v=2eUAL59eUs8
+
 ## Features
 
 ### Education Mode
