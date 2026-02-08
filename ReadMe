@@ -71,7 +71,7 @@ After training:
 
 ### Notes
 - Model accuracy depends heavily on the quality and consistency of the training data
-- A demo CSV file with pre-collected data may be included in a future release
+- A demo CSV file with pre-collected data is currently included, may not work well with your hand. (Just train model and its ready for use)
 
 ---
 
